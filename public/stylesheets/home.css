@@ -1,0 +1,624 @@
+* {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: none;
+}
+
+button{
+  outline: none !important;
+}
+
+small{
+  color: red;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.navbar-dark{
+  background-color: #171b26 !important;
+}
+.navbar-toggler{
+  margin: .5rem;
+}
+
+#logo{
+  width: 12rem;
+  background-color: #fff;
+  padding: .2rem;
+  padding-left: .4rem;
+}
+.navbar{
+  padding:0;
+}
+.navbar a{
+  cursor: pointer;
+}
+
+#navbarSupportedContent ul li{
+  margin-left: 1rem;
+}
+
+.jumbotron{
+  background-color:transparent;
+}
+
+#background{
+  background: url(c.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 0;
+}
+#layer{
+  background-color: rgba(23, 27, 38, .7);
+  z-index: 1;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
+
+#sidebar{
+  height: auto;
+}
+
+.margin-0{
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.padding-0{
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding-00{
+  padding:0;
+}
+
+.hide{
+  display: none;
+}
+
+.heading{
+  color: #fefefe;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  margin-left: 50%;
+  padding-top: 10rem;
+  transform: translateX(-50%);
+  transition: all 1s;
+}
+.heading h1{
+  margin: 0;
+}
+
+/*realsidebar styling.....*/
+.wrapper{
+  min-height: 100%;
+  background-color: #171b26;
+}
+.navwrapper{
+  min-height: 100%;
+}
+.wrapper ul li{
+  padding-left: 2rem;
+  padding-top: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all .3s ease-in-out;
+}
+.wrapper ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+.wrapper ul:hover li
+{
+  opacity: 0.5;
+  padding-left: 2.5rem;
+}
+.wrapper ul li:hover{
+  padding-left: 1.8rem;
+  opacity: 1;
+}
+
+/*close button on top of each forms*/
+.closebtn{
+  background-color: #171b26;
+  color: #ffffff;
+  font-size: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  transform: translate(-50%,-50%);
+}
+
+/*here is the css for form*/
+.forms{
+  display: none;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.forms h3{
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.reg-form{
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.left-form-image{
+  background-image: url('../images/form-background.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  height: 100%;
+}
+.left-form-image-layer{
+  background-color: rgba(107,202,243,.7);
+  z-index: 1;
+  min-height: 100%;
+  padding: 1rem;
+  display: grid;
+  place-items:center;
+}
+
+.correct, .wrong{
+  margin-top: 2.5rem;
+  padding-left: .5rem;
+  color: green;
+}
+.wrong{
+  color: red;
+}
+.errors{
+  font-size: .7rem;
+  color: red;
+  text-transform: capitalize;
+  margin-top: .5rem;
+  font-weight: bold;
+}
+
+.form-content{
+  background-color: #ffffff;
+  min-height: 100%;
+  text-align: left;
+  padding-left: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+}
+.form-content h3{
+  color: #000;
+}
+.form-content input[type="text"],
+.form-content input[type="password"],
+.form-content input[type="date"],
+.form-content input[type="number"],
+.form-content input[type="email"],
+.form-content select{
+  margin: 1.5rem 0;
+  //margin-bottom: 2rem;
+  padding: 0rem;
+  padding-left: .2rem;
+  outline: none;
+  border-radius: 0;
+  border:0;
+  border-bottom: .1rem solid #48c2f1;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.form-content input[type="password"]{
+  margin-bottom: 0;
+}
+.form-content input:focus,
+.form-content select:focus{
+  border: 0;
+  border-bottom: .1rem solid #48c2f1;
+  box-shadow: 0 0 0 transparent;
+}
+.form-content input[type="radio"]{
+  margin-top: 1rem;
+}
+.form-content button[type="submit"]{
+  background-color: #5aa2d5;
+  border-radius: 10rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  box-shadow: 0 .5rem 1.5rem #d8d9d9;
+}
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.form-content label{
+  color: #5aa2d5;
+  font-size: .8rem;
+  margin-bottom: 0;
+}
+.form-content a{
+  text-decoration: none;
+  color: #000;
+  font-size: .9rem;
+  float: right;
+  font-weight: bold;
+  margin-left: .5rem;
+}
+
+.signup{
+  display: block;
+  padding-top: 2rem;
+  padding-right: 3rem;
+  text-align: center;
+  padding-bottom: 0rem;
+}
+.signup h3{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.signup .row{
+  text-transform: uppercase;
+  text-align: left;
+}
+.signup input[type="text"],
+.signup input[type="password"],
+.signup input[type="date"],
+.signup input[type="number"],
+.signup input[type="email"],
+.signup select{
+  margin: 0;
+  margin-bottom: 1rem;
+  text-transform: none;
+}
+.signup button[type="submit"]{
+  margin-top: 1rem;
+}
+
+/* The radio-inline */
+.radio-inline {
+    display: inline-block;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-inline input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(25%);
+    height: .8rem;
+    width: .8rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: .1rem solid #48c2f1;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-inline:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-inline input:checked ~ .checkmark {
+    background-color: #5aa2d5;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-inline input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-inline .checkmark:after {
+  top: .1rem;
+  left: .1rem;
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/*Code for loading spinner in buttons*/
+
+.fa-spinner{
+	animation-name: spinn;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+@keyframes spinn {
+	0%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+
+
+.info{
+  text-align: justify;
+  padding: .5rem;
+}
+.info h3{
+  text-indent: 2rem;
+}
+
+iframe{
+  min-height: 20rem;
+  min-width: 100%;
+}
+
+
+/*About Us page design...!!!*/
+
+.aboutuspage .team p{
+  display: none;
+}
+
+.aboutuspage .team h4{
+  padding-top: 1rem;
+}
+
+/* width */
+.aboutuspage::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.aboutuspage::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+ 
+/* Handle */
+.aboutuspage::-webkit-scrollbar-thumb {
+  background: #5aa2d5; 
+}
+
+/* Handle on hover */
+.aboutuspage::-webkit-scrollbar-thumb:hover {
+  background: #1e8bd8; 
+}
+
+
+.aboutuspage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #5aa2d5 70%, #1e8bd8);
+  color: #fff;
+  padding: 3rem;
+  overflow: hidden;
+  animation-name: aboutus;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.aboutuspage p{
+  font-weight: bold;
+}
+
+@keyframes aboutus{
+  from{
+    height: 0%;
+    width: 0%;
+    border-radius: 0 0 200rem 0;
+    padding: 0;
+  }
+  to{
+    height: 100%;
+    width: 100%;
+    border-radius: 0rem 0 0rem 0;
+    padding: 3rem;
+    overflow-y: auto;
+  }
+}
+
+.aboutuspage .team h4{
+  font-weight: bold;
+}
+
+.aboutuspage .fa-times{
+  cursor: pointer;
+}
+
+/*About us page design ends */
+
+footer{
+  background-color: #000;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.follow{
+  position: relative;
+  padding-top: 3rem;
+  height: 100%;
+  text-align: center;
+}
+
+.follow a{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  opacity: .6;
+}
+.follow a:hover{
+  text-decoration: none;
+  color: #fff;
+  opacity: 1 !important;
+}
+.follow a:focus{
+  text-decoration: none;
+  color: #fff;
+  opacity: .6;
+}
+
+.follow span{
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+}
+
+.follow p{
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+#totop{
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #5aa2d5;
+  //transform: rotateZ(45deg);
+  cursor: pointer;
+}
+#totop::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-25%) rotateZ(45deg);
+  border: .2rem solid #fefefe;
+  border-bottom: .2rem solid transparent;
+  border-right: .2rem solid transparent;
+  box-sizing: border-box;
+  padding: .3rem;
+}
+
+.ui-datepicker-calendar {
+   display: none;
+}
+.ui-datepicker-month {
+   display: none;
+}
+.ui-datepicker-next,.ui-datepicker-prev {
+  display:none;
+}
+
+
+@media only screen and (max-width: 991.9px){
+
+  .navbar{
+    padding: .5rem;
+  }
+
+  #navbarSupportedContent ul li{
+    margin-left: 2rem;
+  }
+
+  .heading{
+    padding-top: 5rem;
+  }
+  .heading h1{
+    font-size: 2rem;
+  }
+
+  #realsidemenu{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+
+  .forms{
+    width: 80%;
+  }
+  .left-form-image-layer{
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+
+}
+
+
+@media only screen and (max-width: 576px){
+
+  #logo{
+    width: 10rem;
+  }
+
+  .heading{
+    padding-top: 5rem;
+    width: 100%;
+  }
+  .heading h1{
+    font-size: 1.8rem;
+  }
+
+  .forms{
+    width: 90%;
+  }
+  .forms ul{
+    display: none;
+  }
+
+  .aboutuspage{
+    padding: 1rem !important;
+  }
+
+}

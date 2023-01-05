@@ -1,0 +1,25 @@
+input[type=file]::-webkit-file-upload-button {
+	font-size: 1rem;
+	padding: .2rem;
+	padding-left: .5rem;
+	border: .05rem solid rgba(0,0,0,.5);
+	background-color: transparent;
+	border-radius: .5rem;
+	width: 30%;
+	text-align: left;
+}
+
+input[type=file]{
+	font-size: 1rem;
+	width: 100%;
+}
+
+/*#popup{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 20rem;
+	height: 20rem;
+	background-color: black;
+}*/

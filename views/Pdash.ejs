@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>Dashboard</title>
+
+	<script type="text/javascript" src="/javascripts/jquery.js"></script>
+	<!--<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>-->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="/s/ds.js"></script>
+	
+	<script type="text/javascript" src="/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="/angular-material/angular-material.min.js"></script>
+	<script type="text/javascript" src="/angular-messages/angular-messages.min.js"></script>
+	<script type="text/javascript" src="/angular-aria/angular-aria.min.js"></script>
+	<script type="text/javascript" src="/angular-animate/angular-animate.min.js"></script>
+
+	<script type="text/javascript" src="/Parent/Parent_dash.js"></script>
+	<script type="text/javascript" src="/s/controllers.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/angular-material/angular-material.css">
+	<!--<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/s/dash-grievances.css">
+	<link rel="stylesheet" type="text/css" href="/s/dash-myaccount.css">
+	<link rel="stylesheet" type="text/css" href="/s/dash-reset-password.css">
+	<link rel="stylesheet" type="text/css" href="/s/dash-post.css">
+
+</head>
+<body ng-app="grievances">
+
+	<nav id="heading" class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+		<a class="navbar-brand">GRIEVANCE PORTAL || ANAND INTERNATIONAL COLLEGE OF ENGINEERING</a>
+
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a href="/logout" title="Logout"><i class="fas fa-power-off"></i></a>
+			</li>
+		</ul>
+
+	</nav>
+
+	<nav class="navbar navbar-dark bg-dark sticky-top d-lg-none">
+		<!--Login button for sidebar panel navbar-->
+		<button class="navbar-toggler padding-00" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!--this is top menu/login panel for mobile versions-->
+		<div class="collapse navbar-collapse realsidemenu" id="sidebar">
+			<ul class="list-unstyled components d-lg-none d-xl-none" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false">
+				<li>
+					<a href="#!/my-account"><span class="fas fa-user"></span>My Account</a>
+				</li>
+				<li>
+					<a href="#!/resetpassword"><span class="fas fa-key"></span>Password Reset</a>
+				</li>
+				<li>
+					<a href="#!/"><span class="fas fa-user"></span>My Grievances</a>
+				</li>
+				<li>
+					<a href="#!/post" onclick="valid();"><span class="fas fa-comments"></span>Post A Grievance</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section>
+		<div class="row padding-0 margin-0">
+			<div class="col-lg-3 col-md-3">
+				<div id="realsidemenu" class="realsidemenu">
+					<!-- Sidebar -->
+					<nav>
+						<ul class="list-unstyled components">
+							<li>
+								<a href="#!/my-account"><span class="fas fa-user"></span>My Account</a>
+							</li>
+							<li>
+								<a href="#!/resetpassword"><span class="fas fa-key"></span>Password Reset</a>
+							</li>
+							<li>
+								<a href="#!/"><span class="fas fa-user"></span>My Grievances</a>
+							</li>
+							<li>
+								<a href="#!/post" onclick="valid();"><span class="fas fa-comments"></span>Post A Grievance</a>
+							</li>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-9">
+				<div class="container-fluid content" ng-view>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--<div id="header" class="header">
+		<div class="row">
+			<div class="col-sm-10">
+				<div class="heading">
+					GRIEVANCE PORTAL || ANAND INTERNATIONAL COLLEGE OF ENGINEERING
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="logout">
+					<a href="/logout"><i class="fas fa-power-off"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="wrapper">
+		<div id="sidebar" class="sidebar">
+			<ul class="sidebar-nav">              
+				<li><a href="#!/my-account"> My Account<span class="fas fa-user"></span></a></li>
+				<li><a href="#!/resetpassword">Password Reset<span class="fas fa-key"></span></a></li>
+				<li><a href="#!/">My Grievances<span class="fas fa-user"></span></a></li>
+				<li><a href="#!/post" onclick="valid();">Post A Grievance<span class="fas fa-comments"></span></a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<div ng-view></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>-->
+
+	<!-- Popper.JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/javascripts/password-score.js"></script>
+	<script type="text/javascript" src="/javascripts/password-score-options.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap-strength-meter.js"></script>
+
+</body>
+
+</html>

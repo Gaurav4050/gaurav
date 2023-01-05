@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>Dashboard</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootrap.min.js"></script>
+	<script type="text/javascript" src="js/ds.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/dash.js"></script>
+	<!--<script type="text/javascript" src="/s/controllers.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/dash-grievances.css">
+	<link rel="stylesheet" type="text/css" href="css/dash-myaccount.css">
+	<link rel="stylesheet" type="text/css" href="css/dash-reset-password.css">
+	<link rel="stylesheet" type="text/css" href="css/dash-post.css">
+</head>
+<body ng-app="grievances">
+
+	<section id="header" class="header">
+		<div class="heading">
+			GRIEVANCE PORTAL || ANAND INTERNATIONAL COLLEGE OF ENGINEERING
+		</div>
+		<!--<a class="a"><img src="../images/logout.png" style="height: 30px;width: 30px; border-radius: 20px;margin-top: 10px;"></a>
+
+		<div class="arrow_up"></div>
+		<div class="logout">
+			<form action="/logout">
+				<input type="submit" value="logout" name="" class="logout_btn" style="width: 80%;">
+			</form>
+		</div>-->
+	</section>
+
+	<section class="wrapper">
+		<div id="sidebar" class="sidebar">
+			<ul class="sidebar-nav">              
+				<li><a href="#!/"> My Account<span class="fas fa-user"></span></a></li>
+				<li><a href="#!/settings">Settings<span class="fas fa-cog"></span></a></li>
+				<li><a href="#!/gcm">Grievance Cell Members<span class="fas fa-user"></span></a></li>
+				<li><a href="#!/rejected">Rejected Users<span class="fas fa-ban"></span></a></li>
+				<li><a href="#!/pending">Pending Approval/Users<span class="fas fa-clock"></span></a></li>
+				<li><a href="#!/approved">Approved Users<span class="fas fa-check"></span></a></li>
+				<li><a href="#!/grievances" >Grievances<span class="fas fa-comments"></span></a></li>
+				<li><a href="#!/deletedgriev" >Deleted Grievances<span class="fas fa-trash"></span></a></li>
+				<li>
+					<a id="report" href="#!/reports">Reports<span class="fas fa-file"></span></a>
+					<div class="reports">
+						<ul>
+							<li>Report1</li>
+							<li>Report2</li>
+							<li>Report3</li>
+							<li>Report4</li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#!/maillog" >Mail Log<span class="fas fa-history"></span></a></li>
+				<li><a href="#!/labeleditor" >Label Editor<span class="fas fa-edit"></span></a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<div ng-view></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>

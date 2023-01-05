@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>AGC</title>
+	<script src="/angular/angular.min.js"></script>
+	<script src="/angular-route/angular-route.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<style type="text/css">
+	.red{color: white;background: red;padding: 0px 10px; }
+	.orange{color: white;background: orange; padding: 0px 10px;}
+	.green{color: white;background: green; padding: 0px 10px;}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top bg-dark fixed-top">
+		<div class="navbar-header">
+			<button id="tog" type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img src="../images/a.png"></a>
+			<!--<button type="button" id="lgnbtn" class="navbar-toggle collapsed pull-right">
+				<span class="sr-only">Toggle navigation</span>
+				<a>Login/Register</a>
+			</button>-->
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left" id="linkcontainer">
+				<li><a id="navhome" href="#home" class="btnh underline">Home</a></li>
+				<li><a href="#about-us" class="btnh">About</a></li>
+				<li><a href="#contact-page" class="btnh">Contact</a></li>
+			</ul>
+			<ul 
+		</div>
+	</nav>
+
+	<div class="image" id="home">
+		<div id="bg">
+			<div class="row">
+				<div class="col-md-9 col-sm-9">
+					<div class="heading">
+						<div class="row">
+							<div class="col-lg-12 col-sm-12 col-xs-12">
+								<div id="sitetitle" class="title1">
+									GRIEVANCE REDRESSAL PORTAL
+								</div>
+							</div>
+						</div>
+
+						<div class="forms login" id="1l">
+							<div class="form-position">
+								<div class="form-title">Admin Login</div>
+								<form method="post" action="/Admin/login" name="lgn1">
+									<div class="form-group">
+										<input type="text" placeholder="Enter Username" name="id" value=""  /><span id="msgerr11">
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15" /><span id="msgerr12"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="adminlogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check1"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div class="forms login" id="2l">
+								<div class="form-position">
+									<div class="form-title">Management Login</div>
+									<form method="post" action="/mngmnt/login" name="lgn2">
+										<div class="form-group">
+											<input type="text" placeholder="Enter Username" name="id" value=""  /><span id="msgerr21"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15"   /><span id="msgerr22"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="mngmntlogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check2"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="forms login" id="3l">
+								<div class="form-position">
+									<div class="form-title">Faculty Login</div>
+									<form method="post" action="/faculty/login" name="lgn3">
+										<div class="form-group">
+											<input type="text" placeholder="Enter Username" name="id" value=""  /><span id="msgerr31"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15"  /><span id="msgerr32"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="facultylogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check3"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="newuser">
+													New User ?<a id="r3">Register</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="3r" class="forms register">
+								<div class="form-position">
+									<div class="form-title"> Faculty Registration</div>
+									<form name="facreg" method="post" onsubmit="return facregval()" action="/staff/register" enctype="multipath/form-data"  >
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input name="Desig" type="text" placeholder="Enter Designation">
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter name" name="name" value="" /><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Department:</label><br>
+													<select name="dep" type="text" >
+														<option value="First year">First Year</option>
+														<option value="CS" >Computer Science Engineering</option>
+														<option value="ME">Mechanical Engineering</option>
+														<option value="EC">Electronics And Communication Engineering</option>      
+														<option value="EE">Electronics Engineering</option>
+														<option value="CE">Civil Engineering</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Gender:</label><br>
+													<select name="gender" type="text">
+														<option value="M" >MALE</option>
+														<option value="F">FEMALE</option>
+														<option value="O">OTHERS</option>      
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter mobile no" name="Mobile"  /><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter Email" name="email"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Enter Password" autocomplete="off" name="password" id="facpassword" maxlength="15" /><br><span class="strength"></span><span style="color: white;font-size: 10px">*(must contain alteast 1 small,1 capital,1 numberic,8 letters)</span><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input name="id" type="text" placeholder="Enter EmployeeID"><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Re-enter Password" autocomplete="off" name="password2" maxlength="15"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="submit" value="Register" class="btn btn-primary">
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="4l" class="forms login">
+								<div class="form-position">
+									<div class="form-title"> Grievance Cell Staff Login</div>
+									<form method="post" action="/Members/login" name="lgn4">
+										<div class="form-group">
+											<input type="text" placeholder="Enter Username" name="id" value="" /><span id="msgerr41"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15"  /><span id="msgerr42"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="memberlogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check4"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+
+							<div id="5l" class="forms login">
+								<div class="form-position">
+									<div class="form-title">Student Login</div>
+									<form method="post" action="/Student/login" name="lgn5">
+										<div class="form-group">
+											<input type="text" placeholder="Enter Username" name="id" value="" /><span id="msgerr51"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15"  /><span id="msgerr52"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="studentlogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check5"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="newuser">
+													New User ?<a id="r5">Register</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="5r" class="forms register">
+								<div class="form-position">
+									<div class="form-title"> Student Registration</div>
+									<form name="stdreg" method="post" onsubmit="return stdregval()" action="/Student/register" enctype="multipath/form-data"  >
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter name" name="name" value="" /><br><span id="snameerr" style="color: red;"></span>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter Email" name="email"  /><br><span id="semailerr" style="color: red;"></span>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter course completion date" name="cdate"/><br><span id="scdateerr" style="color: red;"></span>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Gender:</label><br>
+													<select name="gender" type="text">
+														<option value="M" >MALE</option>
+														<option value="F">FEMALE</option>
+														<option value="O">OTHERS</option>      
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter mobile no" name="Mobile"  /><br><span id="smoberr" style="color: red;"></span>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter College ID" name="id"  /><br><span id="sciderr" style="color: red;"></span>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Department:</label><br>
+													<select name="dep" type="text" >
+														<option value="First year">First Year</option>
+														<option value="CS" >Computer Science Engineering</option>
+														<option value="ME">Mechanical Engineering</option>
+														<option value="EC">Electronics And Communication Engineering</option>      
+														<option value="EE">Electronics Engineering</option>
+														<option value="CE">Civil Engineering</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Batch/Class:</label><br>
+													<select name="batch" type="text" >
+														<option value="First year">First Year</option>
+														<option value="Second year" >Second Year</option>
+														<option value="Third year">Third Year</option>
+														<option value="Final year">Final Year</option>     
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Enter Password" autocomplete="off" name="password" id="password" maxlength="15" /><br><span class="strength"></span><span style="color: white;font-size: 10px">*(must contain alteast 1 small,1 capital,1 numberic,8 letters)</span><br><span id="spwderr" style="color: red;"></span>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Re-enter Password" autocomplete="off" name="password2" maxlength="15"  /><br><span id="spwd2err" style="color: red;"></span>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<span id="stderr"></span><br><br>
+											<input type="submit" value="Register" class="btn btn-primary">
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="6l" class="forms login">
+								<div class="form-position">
+									<div class="form-title">Parent Login</div>
+									<form method="post" action="/Parent/login" name="lgn6">
+										<div class="form-group">
+											<input type="text" placeholder="Enter Username" name="id" value="" /><span id="msgerr61"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15"  /><span id="msgerr62"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="parentlogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check6"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="newuser">
+													New User ?<a id="r6">Register</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="6r" class="forms register">
+								<div class="form-position">
+									<div class="form-title"> Parent Registration</div>
+									<form name="parreg" method="post" onsubmit="return parregval()" action="/Parent/register" enctype="multipath/form-data"  >
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter name" name="name" value="" /><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter Email" name="email"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter course completion date" name="cdate"/><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter relation" name="relation"  />
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter mobile no" name="Mobile"  /><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter college id" name="id"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Enter Password" autocomplete="off" name="password" id="parpassword" maxlength="15" /><br><span class="strength"></span><span style="color: white;font-size: 10px">*(must contain alteast 1 small,1 capital,1 numberic,8 letters)</span><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Re-enter Password" autocomplete="off" name="password2" maxlength="15"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="submit" value="Register" class="btn btn-primary">
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="7l" class="forms login">
+								<div class="form-position">
+									<div class="form-title">Non-Teaching Login</div>
+									<form method="post" action="/staff/login" name="lgn7">
+										<div class="form-group">
+											<input type="text" placeholder="Enter Username" name="id" value="" /><span id="msgerr71"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" placeholder="Enter Password" name="password" value=""  maxlength="15"  /><span id="msgerr72"></span>
+										</div>
+										<div class="form-group">
+											<input type="submit" id="nonteachinglogin" value="Login" class="btn btn-primary">
+										</div>
+										<div class="row">
+											<div class="col-xs-8">
+												<div class="remember">
+													<input type="checkbox" id="check7"> <label>Remember me</label>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div class="forgot">
+													<a href="#">Forgot Password ?</a>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="newuser">
+													New User ?<a id="r7">Register</a>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div id="7r" class="forms register">
+								<div class="form-position">
+									<div class="form-title"> Non-Teaching Staff Registration</div>
+									<form name="ntsreg" method="post" onsubmit="return ntsregval()" action="/staff/register" enctype="multipath/form-data"  >
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input name="Desig" type="text" placeholder="Enter Designation">
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter name" name="name" value="" /><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Department:</label><br>
+													<select name="dep" type="text" >
+														<option value="First year">First Year</option>
+														<option value="CS" >Computer Science Engineering</option>
+														<option value="ME">Mechanical Engineering</option>
+														<option value="EC">Electronics And Communication Engineering</option>      
+														<option value="EE">Electronics Engineering</option>
+														<option value="CE">Civil Engineering</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Gender:</label><br>
+													<select name="gender" type="text">
+														<option value="M" >MALE</option>
+														<option value="F">FEMALE</option>
+														<option value="O">OTHERS</option>      
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter mobile no" name="Mobile"  /><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="text" placeholder="Enter Email" name="email"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Enter Password" autocomplete="off" name="password" id="ntspassword" maxlength="15" /><br><span class="strength"></span><span style="color: white;font-size: 10px">*(must contain alteast 1 small,1 capital,1 numberic,8 letters)</span><br>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input name="id" type="text" placeholder="Enter EmployeeID"><br>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<input type="password" placeholder="Re-enter Password" autocomplete="off" name="password2" maxlength="15"  /><br>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="submit" value="Register" class="btn btn-primary">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3">
+						<div class="options" id="options">
+
+							<ul>
+								<li id="admin" class="btn 1">Admin</li>
+								<li id="management" class="btn">Management</li>
+								<li id="faculty" class="btn">Faculty</li>
+								<li id="grievance_cell_staff" class="btn">Grievance Cell Staff</li>
+								<li id="student" class="btn">Student</li>
+								<li id="parent" class="btn">Parent</li>
+								<li id="nonteaching" class="btn">Non-Teaching</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="info container" id="about-us"><br><br>
+			<h1 id="aboutheading">About Us</h1>
+
+			<div id="aboutinfo" class="information">
+				<h3>“Be Acknowledged Globally for Value based Education & Innovation in Service of Humankind”</h3>
+				The Anand International College of Engineering (Anand-ICE),   approved     by AICTE and affiliated to RTU, Kota is established at India’s Pink City-Jaipur  in year 2010. Since its inception, the institute persists its credentials  of  joyous teaching-learning environs of global standards and offers B.Tech. degree programme in five engineering disciplines i.e. Civil, Computer Science, Electrical, Electronics & Communication, and Mechanical Engineering. The institute nurtures intellectually inspiring Academic Environment at lush-green landscaped campus with state-of-the-art infrastructure.<br><br>
+
+				The Anand-ICE has been distinguished for its qualitative teaching-learning processes that place it among the best emerging engineering institutions of India (Times of India). The Anand family comprises eminent academicians & scientists as faculty who also extend Academic parenting to the students. The family further broadens its intellectual arena by bringing internationally renowned professionals on board for achieving higher mark of academic intelligence.<br>
+				The institute with Anand Edge, empowers students to redesign their curriculum through unique FSBT4 while facilitating students to not only deeply understand the fundamentals of engineering sciences but also train to obtain sustainable solutions of real-life problems.
+				The institute extends strategic partnerships with various renowned foreign universities for exposing students through Abroad Training Programme. The institute also encourages the students to incubate their innovative concepts in order to foster new ventures.<br>
+				The campus enriches students with diverse range of competencies through 390o evolving processes and gears them up to respond to the challenges of every aspect of life and compete globally.<br>
+				The success of our students in the wider world itself speaks for them. Join us and be part of stream of success!
+
+			</div>
+		</div>
+
+		<div class="info container" id="contact-page"><br><br>
+			<h1 id="contactheading">Contact Us</h1>
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<div id="contactinfo" class="information">
+						<bold>Anand International College of Engineering</bold><br>
+						AnandInternational College of Engineering ,NearKanota, Agra Road, Jaipur<br> 
+						Phone: 01429- 234994, 95<br>
+						Mobile: 9928755552, 9928755553 Fax: 01429- 234994<br>
+						Email: info@anandice.ac.in<br><br>
+
+						If you have any queries regarding this software,you may contact the numbers below.<br>
+						a. Admin- 8949196927<br>
+						b. Proctor-9694097815<br>
+						c. Campus Manager-9694097813<br>
+						d. Hostel Manager-9694097801<br>
+					</div>
+				</div>
+				<div id="map" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16568.274592791873!2d75.96131806715803!3d26.861588901074704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db8be74c25e59%3A0x675325c0c46956fc!2sAnand+International+College+of+Engineering!5e0!3m2!1sen!2sin!4v1536426536774" allowfullscreen></iframe>
+				</div>
+
+			</div>
+		</div>
+
+			<a id="totop" class="fa fa-arrow-up" title="Back To Top"></a>
+
+			<footer>
+
+				<div class="follow">
+					<span>Follow Us</span><br>
+					<a href="https://twitter.com/AnandcollegeEng" class="fa fa-twitter" target="_blank"></a>
+					<a href="https://www.youtube.com/channel/UCAcHeVvVgwRx7wSWw69RgYg/" class="fa fa-youtube-play" target="_blank"></a>
+					<a href="https://www.pinterest.com/anandice/" class="fa fa-pinterest-p" target="_blank"></a>
+					<a href="https://plus.google.com/u/1/114413981688380933224" class="fa fa-google" target="_blank"></a>
+					<a href="https://www.facebook.com/Anand-International-College-of-Engineering-Jaipur-789735534445909/" class="fa fa-facebook" target="_blank"></a>
+					<a href="https://www.instagram.com/anandcollege.eng/" class="fa fa-instagram" target="_blank"></a><br>
+
+					<p>We Are The Influencers, Not The Followers!!!</p>
+				</div>
+
+			</footer>
+
+		</body>
+
+		<script src="/javascripts/jquery.js"></script>
+		<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="/javascripts/home.js"></script>
+		<script type="text/javascript" src="javascripts/validate.js"></script>
+
+		</html>
+
+
+
+
+
+* {
+  font-size: 100%;
+}
+
+body {
+  //font-family: Verdana, Geneva, sans-serif;
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+   }
+
+nav{
+  padding-left: 3rem;
+  margin: 0;
+}
+nav a{
+  color: #fff !important;
+}
+
+.navbar-fixed-top{
+  background-color: rgba(0,0,0,0) !important;
+  border: 0 !important;
+  letter-spacing: .1rem;
+  padding-left: 0;
+}
+
+.navbar-fixed-top button{
+  border: 0 !important;
+  margin-left: -.5rem;
+}
+.navbar-fixed-top button:hover{
+  background-color: transparent !important;
+}
+
+#tog:hover span{
+  background-color: #000 !important;
+}
+#tog:hover{
+  background-color: rgba(255,255,255,.3) !important;
+}
+
+.navbar-fixed-top button:focus{
+  background-color: transparent !important;
+}
+
+.navbar-fixed-top.scrolled {
+  background-color: rgba(0,0,0,1) !important;
+  transition: background-color .5s linear;
+}
+
+
+.navbar-toggle{
+  width: auto;
+  margin-left: -1rem;
+}
+
+nav img{
+  width: 25rem;
+  background-color: #fff;
+  padding: .5rem;
+  padding-left: 1rem;
+}
+
+.navbar-brand{
+  padding: 0 !important;
+}
+
+#bg{
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.image {
+  min-height: 100vh;
+  background: url(c.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.heading {
+  width: 100%;
+  position: relative;
+  padding-top: 3rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+   .title1{
+  position: absolute;
+  left: 50%;
+  margin-top: 20%;
+  transform: translateX(-50%);
+  width: 80%;
+  color: #fff;
+  font-size: 6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family:  Nova;
+ }
+ 
+ .title{
+  left: 50%;
+  margin-top: 5%;
+  width: 100%;
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: normal;
+ }
+
+ .form-title{
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #fff;
+ }
+
+ .form-position{
+  position: relative;
+  text-align: left;
+ }
+
+.form-group{
+  margin-left: 1rem;
+  position: relative;
+}
+
+ .remember{
+  margin-left: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+ }
+
+.forgot{
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.forgot a{
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-left: .5rem;
+}
+.forgot a:hover{
+  color: #fff;
+  cursor: pointer;
+}
+
+.newuser{
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.newuser a{
+  color: #aaa;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+.newuser a:hover{
+  color: #fff;
+}
+
+.forms {
+  position: relative;
+  margin: 0 auto;
+  top: 0%;
+  left: 0%;
+  display: none;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.7);
+  width: 40%;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem .5rem .2rem #000;
+}
+
+.forms span{
+  color: red;
+}
+
+.register{
+  min-width: 50%;
+}
+
+.login{
+  transform: translateY(30%);
+}
+
+.btnh::after{
+  content: "";
+  display: block;
+  background-color: #fff;
+  position: relative;
+  height: .3rem;
+  width: 0;
+  margin-top: .3rem;
+  transform-origin: left;
+  transition: width .3s linear;
+}
+
+.btnh:hover::after{
+  width: 100%;
+}
+
+.underline::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  position: relative;
+  height: .3rem;
+  width: 100%;
+  margin-top: .3rem;
+  transform-origin: left;
+}
+
+.info h1 {
+  color: black;
+  text-align: center; }
+
+.options {
+  border-left: 0.2rem solid rgba(255, 255, 255, 0.3);
+  margin-top: 0;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  display: block;
+  opacity: 1;
+  text-align: left !important;
+}
+
+.options li {
+  background-color: transparent;
+  padding-left: 1.5rem;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  margin-bottom: 1rem;
+  display: block;
+  font-size: 2rem;
+  font-weight: 30;
+  letter-spacing: .1rem;
+  color: white;
+  width: auto;
+  text-align: left;
+  overflow: hidden;
+  opacity: 0;
+  transition: all .1s ease-in-out;
+  transform-origin: top center;
+  perspective: 70rem; }
+  .options li:nth-child(1) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: -150ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .options li:nth-child(2) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .options li:nth-child(3) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: 150ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .options li:nth-child(4) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .options li:nth-child(5) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: 450ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .options li:nth-child(6) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .options li:nth-child(7) {
+    animation-name: lists;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-delay: 750ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+
+@keyframes lists {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem); } }
+
+.options li:hover {
+  padding-left: 0.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: .2rem solid white }
+
+.options ul {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 6rem;
+  list-style-type: none; }
+
+/* Style the active class, and buttons on mouse-over */
+.a {
+  padding-left: 0.5rem !important;
+  cursor: default !important;
+  font-size: 2.3rem !important;
+  border-bottom: .2rem solid white !important;
+}
+
+.dropdown{
+  display: none;
+  color: #fff;
+  font-size: 1rem;
+}
+.drop a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+input[type=text], input[type=password], input[type=File], input[type=number] {
+  width: 100%;
+  padding: .3rem .5rem;
+  text-align: left;
+  display: inline-block;
+  border: .1rem solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  border-radius: .5rem; }
+
+input[type=File] {
+  border-radius: 0; }
+
+label{
+  color: #fff;
+}
+
+select{
+  width: 100%;
+  font-size: 1.5rem;
+  padding: .2rem;
+  border-radius: .5rem;
+  outline: none;
+}
+
+.information {
+  line-height: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  text-align: justify;
+  }
+
+iframe {
+  width: 90%;
+  height: 26rem;
+  margin-left: 5%;
+  margin-bottom: 2rem;
+  frameborder: 0; }
+
+.open {
+  display: none; }
+
+.fa-arrow-up{
+  display: none;
+  color: blue;
+  border: .1rem solid blue;
+  padding: .8rem;
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+.fa-arrow-up:hover{
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+}
+
+footer{
+  background-color: #000;
+  height: 20rem;
+  margin-top: 2rem;
+}
+
+.follow{
+  position: relative;
+  top: 3rem;
+  text-align: center;
+}
+
+.follow a{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 1rem;
+  opacity: .6;
+}
+.follow a:hover{
+  text-decoration: none;
+  color: #fff;
+  opacity: 1 !important;
+}
+.follow a:focus{
+  text-decoration: none;
+  color: #fff;
+  opacity: .6;
+}
+
+.follow span{
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+}
+
+.follow p{
+  color: #fff;
+  padding-top: 2rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+#lgnbtn a{
+  text-decoration: none !important;
+  border: .05rem solid #fff;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  transition: all .5s;
+}
+#lgnbtn a:hover{
+  background-color: #fff;
+  color: #000 !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .login{
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .forms{
+    width: 95%;
+  }
+  .title1{
+    position: absolute;
+    left: 0;
+    margin-top: 4rem;
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .options{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .heading{
+    width: 100%;
+  }
+  .forms{
+    width: 100%;
+  }
+}

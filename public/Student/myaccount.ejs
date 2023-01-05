@@ -1,0 +1,96 @@
+<!--Student-->
+<div ng-app="grievances" ng-controller="Student">
+	<h3>My Account</h3>
+	<form class="form-horizontal" id="account-details" ng-submit="submit()">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Name </label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="name" readonly>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label">Gender</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="gender" readonly>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Course Detail</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="dep" readonly>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Class Detail</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="Batch" readonly>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Hall Ticket</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="id" readonly>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Course Completion Date</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="cdate" readonly>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Email Id</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="email" readonly>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-2">
+					<label class="control-label"> Mobile Number</label>
+				</div>
+				<div class="col-sm-7">
+					<input class="form-control" type="text" ng-model="mobile" >
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-7 offset-sm-2">
+					<button class="btn btn-secondary" type="submit" id="student-details">
+						Update
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

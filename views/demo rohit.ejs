@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>AGC</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+</head>
+<body ng-app="">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top bg-dark">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="#home" class="btnh under-dot">Home</a></li>
+				<li><a href="#about-us" class="btnh">About</a></li>
+				<li><a href="#contact-page" class="btnh">Contact</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</nav>
+
+	<div class="image" id="home">
+
+		<div class="heading">
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<img src="../images/a.png">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="title1">
+						Grievance Redressal Portal
+					</div>
+				</div>
+			</div>
+
+			<div class="forms login" id="1l">
+				<div class="form-position">
+					<div class="form-title">Admin Login</div>
+					<form method="post" action="/Admin/login" onsubmit="return myFun1()" name="lgn1">
+						<div class="form-group">
+							<input type="text" placeholder="Enter Username" name="id" value=""  /><span id="msgerr11"></span>
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password" value="" /><span id="msgerr12"></span>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Login" class="btn btn-primary">
+						</div>
+						<div class="row">
+							<div class="remember col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<input type="checkbox" id="check"> <label>Remember me</label>
+							</div>
+							<div class="forgot col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<a href="#">Forgot Password ?</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="forms login" id="2l">
+				<div class="form-position">
+					<div class="form-title">Management Login</div>
+					<form method="post" action="/mngmnt/login" onsubmit="return myFun2()" name="lgn2">
+						<div class="form-group">
+							<input type="text" placeholder="Enter Username" name="id"  />
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password"  />
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Login" class="btn btn-primary">
+						</div>
+						<div class="row">
+							<div class="remember col-lg-6">
+								<input type="checkbox" id="check"> <label>Remember me</label>
+							</div>
+							<div class="forgot col-lg-6  col-md-6 col-sm-6 col-xs-6">
+								<a href="#">Forgot Password ?</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="forms login" id="3l">
+				<div class="form-position">
+					<div class="form-title">Faculty Login</div>
+					<form method="post" action="/faculty/login" onsubmit="return myFun3()" name="lgn3">
+						<div class="form-group">
+							<input type="text" placeholder="Enter Username" name="id"  />
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password"  />
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Login" class="btn btn-primary">
+						</div>
+						<div class="row">
+							<div class="remember col-lg-6">
+								<input type="checkbox" id="check"> <label>Remember me</label>
+							</div>
+							<div class="forgot col-lg-6  col-md-6 col-sm-6 col-xs-6">
+								<a href="#">Forgot Password ?</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="newuser col-lg-6 col-md-12 col-sm-12">
+								New User ?<a id="r3">Register</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="forms register" id="3r">
+				<div class="form-position">
+					<div class="form-title">Faculty Registration</div>
+					<form method="post" action="/faculty/register" enctype="multipath/form-data">
+						<div class="row">
+							<div class="form-group col-xs-6 pull-left">
+								<input name="name" type="text" placeholder="Enter Name">
+							</div>
+							<div class="form-group col-xs-5">
+								<div class="drop">
+									<a id="gender">Reports<span class="caret"></span></a>
+									<div class="dropdown">
+										<ul>
+											<li>Male</li>
+											<li>Female</li>
+											<li>Others</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group pull-left">
+							<label>Department:</label>
+							<select name="dep" type="text" >
+								<option value="First year">First_Year</option>
+								<option value="CS" >CS</option>
+								<option value="ME">ME</option>
+								<option value="EC">EC</option>      
+								<option value="EE">EE</option>
+								<option value="CE">CE</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input name="Desig" class="form-control" type="text" placeholder="Enter Designation">
+						</div>
+						<div class="form-group">
+							<input type="text" placeholder="Enter Employee id" name="id"  />
+						</div>
+						<div class="form-group">
+							<input type="text" placeholder="Enter Email" name="email"  />
+						</div>
+						<div class="form-group">
+							<input type="text" placeholder="Enter mobile no" name="Mobile"  />
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password"  />
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Re-enter Password" name="password2"  />
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Register" class="btn btn-primary">
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			<div id="4l" class="forms login">
+				<div class="form-position">
+					<div class="form-title"> Grievance Cell Staff Login</div>
+					<form method="post" action="/Members/login" onsubmit="return myFun4()" name="lgn4">
+						<div class="form-group">
+							<input type="text" placeholder="Enter Username" name="id"  />
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password"  />
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Login" class="btn btn-primary">
+						</div>
+						<div class="row">
+							<div class="remember col-lg-6">
+								<input type="checkbox" id="check"> <label>Remember me</label>
+							</div>
+							<div class="forgot col-lg-6  col-md-6 col-sm-6 col-xs-6">
+								<a href="#">Forgot Password ?</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			
+			<div id="5l" class="forms login">
+				<div class="form-position">
+					<div class="form-title">Student Login</div>
+					<form method="post" action="/Student/login" onsubmit="return myFun5()" name="lgn5">
+						<div class="form-group">
+							<input type="text" placeholder="Enter Username" name="id"  />
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password"  />
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Login" class="btn btn-primary">
+						</div>
+						<div class="row">
+							<div class="remember col-lg-6">
+								<input type="checkbox" id="check"> <label>Remember me</label>
+							</div>
+							<div class="forgot col-lg-6  col-md-6 col-sm-6 col-xs-6">
+								<a href="#">Forgot Password ?</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="newuser col-lg-6 col-md-12 col-sm-12">
+								New User ?<a id="r5">Register</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div id="5r" class="forms register">
+				<div class="form-position">
+					<div class="form-title"> Student Registration</div>
+					<form method="post" action="/Student/register" enctype="multipath/form-data">
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group">
+									<input type="text" placeholder="Enter name" name="name"  />
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<input type="text" placeholder="Enter Email" name="email"  />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="Enter course completion date" name="cdate"/>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>Gender:</label><br>
+							<select name="gender" type="text">
+								<option value="M" >MALE</option>
+								<option value="F">FEMALE</option>
+								<option value="O">OTHERS</option>      
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="Enter mobile no" name="Mobile"  />
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="Enter college id" name="id"  />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>Department:</label><br>
+							<select name="dep" type="text" >
+								<option value="First year">First Year</option>
+								<option value="CS" >Computer Science Engineering</option>
+								<option value="ME">Mechanical Engineering</option>
+								<option value="EC">Electronics And Communication Engineering</option>      
+								<option value="EE">Electronics Engineering</option>
+								<option value="CE">Civil Engineering</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>Batch/Class:</label><br>
+							<select name="batch" type="text" >
+								<option value="First year">First Year</option>
+								<option value="Second year" >Second Year</option>
+								<option value="Third year">Third Year</option>
+								<option value="Final year">Final Year</option>     
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="password" placeholder="Enter Password" name="password"  />
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="password" placeholder="Re-enter Password" name="password2"  />
+						</div>
+					</div>
+				</div>
+						<div class="form-group">
+							<input type="submit" value="Register" class="btn btn-primary">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+				<!--<div id="6l" class="login login-register">
+					<h3>Parent Login</h3>
+					<form method="post" action="/Parent/login">
+						<input type="text" placeholder="Enter Username" name="id"  />
+						<input type="password" placeholder="Enter Password" name="password"  /><br>
+						<button type="submit">Login</button><br>
+						<span style="position: relative; float: left;"><input type="checkbox" id="check"> Remember me</span><br>
+						<a href="#">Forgot Password ?</a><br>
+						<span style="position: relative; float: left;"> New Member? <a id="r6">Register</a></span>
+					</form>
+				</div>
+				<div id="6r" class="register login-register">
+					<h3>Parent Registration</h3>
+					<form method="post" action="/Parent/register" enctype="multipath/form-data">
+						<input type="text" placeholder="Enter name" name="name"  />
+						<input type="text" placeholder="Enter Email" name="email"  />
+						<input type="text" placeholder="Enter course completion date" name="cdate"  />
+						<input type="text" placeholder="Enter relation" name="relation"  />
+						<input type="text" placeholder="Enter mobile number" name="Mobile"  />
+						<input type="password" placeholder="Enter Password" name="password"  />
+						<input type="password" placeholder="Re-enter Password" name="password2"  />
+						<button type="submit">Register</button>
+					</form>
+				</div>
+
+				<div id="7l" class="login login-register">
+					<h3>Non Teaching Staff Login</h3>
+					<form method="post" action="/staff/login">
+						<input type="text" placeholder="Enter Username" name="id"  />
+						<input type="password" placeholder="Enter Password" name="password"  /><br>
+						<button type="submit">Login</button><br>
+						<span style="position: relative; float: left;"><input type="checkbox" id="check"> Remember me</span><br>
+						<a href="#">Forgot Password ?</a><br>
+						<span style="position: relative; float: left;"> New Member? <a id="r7">Register</a></span>
+					</form>
+				</div>
+				<div id="7r" class="register login-register">
+					<h3>Non-Teaching Staff Registration</h3>
+					<form method="post" action="/staff/register">
+						<input type="text" placeholder="Enter Email" name="email"/>
+						<input type="text" placeholder="Enter Mobile no" name="Mobile"/>
+						<label>Gender</label>
+						<select name="gender" type="text">
+							<option value="M" >MALE</option>
+							<option value="F">FEMALE</option>
+							<option value="O">OTHERS</option>      
+						</select>	
+						<label>Department</label>
+						<select name="dep" type="text" >
+							<option value="First year">First_Year</option>
+							<option value="CS" >CS</option>
+							<option value="ME">ME</option>
+							<option value="EC">EC</option>      
+							<option value="EE">EE</option>
+							<option value="CE">CE</option>
+						</select>
+						<input name="id" type="text" placeholder="Enter EmployeeID">
+						<input name="Desig" type="text" placeholder="Enter Designation">
+						<input type="text" placeholder="Enter staff name" name="name"  />
+						<input type="password" placeholder="Enter Password" name="password"  />
+						<input type="password" placeholder="Re-enter Password" name="password2"  />
+						<button type="submit">Register</button>
+					</form>
+				</div>
+
+			</div>-->
+		</div>
+
+		<div class="options" id="options">
+
+			<ul>
+				<li id="admin" class="btn 1">Admin</li>
+				<li id="management" class="btn">Management</li>
+				<li id="faculty" class="btn">Faculty</li>
+				<li id="grievance_cell_staff" class="btn">Grievance Cell Staff</li>
+				<li id="student" class="btn">Student</li>
+				<li id="parent" class="btn">Parent</li>
+				<li id="nonteaching" class="btn">Non-Teaching</li>
+			</ul>
+
+		</div>
+		<div class="head">
+			<!--<div id="head">
+				<a href="#home" id="home-page" class="btnh under-dot">Home</a>
+				<a href="#about-us" id="about" class="btnh">About Us</a>
+				<a href="#contact-page" id="contact" class="btnh">Contact</a>
+			</div>-->
+			<div class="icons hide">
+				<a href="https://twitter.com/AnandcollegeEng" class="fa fa-twitter" target="_blank"></a>
+				<a href="https://www.youtube.com/channel/UCAcHeVvVgwRx7wSWw69RgYg/" class="fa fa-youtube-play" target="_blank"></a>
+				<a href="https://www.pinterest.com/anandice/" class="fa fa-pinterest-p" target="_blank"></a>
+				<a href="https://plus.google.com/u/1/114413981688380933224" class="fa fa-google" target="_blank"></a>
+				<a href="https://www.facebook.com/Anand-International-College-of-Engineering-Jaipur-789735534445909/" class="fa fa-facebook" target="_blank"></a>
+				<a href="https://www.instagram.com/anandcollege.eng/" class="fa fa-instagram" target="_blank"></a>
+				<span>Follow Us</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="info" id="about-us"><br><br>
+		<h1>About Us...</h1>
+
+		<div class="information">
+			<h3>“Be Acknowledged Globally for Value based Education & Innovation in Service of Humankind”</h3>
+			The Anand International College of Engineering (Anand-ICE),   approved     by AICTE and affiliated to RTU, Kota is established at India’s Pink City-Jaipur  in year 2010. Since its inception, the institute persists its credentials  of  joyous teaching-learning environs of global standards and offers B.Tech. degree programme in five engineering disciplines i.e. Civil, Computer Science, Electrical, Electronics & Communication, and Mechanical Engineering. The institute nurtures intellectually inspiring Academic Environment at lush-green landscaped campus with state-of-the-art infrastructure.<br><br>
+
+			The Anand-ICE has been distinguished for its qualitative teaching-learning processes that place it among the best emerging engineering institutions of India (Times of India). The Anand family comprises eminent academicians & scientists as faculty who also extend Academic parenting to the students. The family further broadens its intellectual arena by bringing internationally renowned professionals on board for achieving higher mark of academic intelligence.<br>
+			The institute with Anand Edge, empowers students to redesign their curriculum through unique FSBT4 while facilitating students to not only deeply understand the fundamentals of engineering sciences but also train to obtain sustainable solutions of real-life problems.
+			The institute extends strategic partnerships with various renowned foreign universities for exposing students through Abroad Training Programme. The institute also encourages the students to incubate their innovative concepts in order to foster new ventures.<br>
+			The campus enriches students with diverse range of competencies through 390o evolving processes and gears them up to respond to the challenges of every aspect of life and compete globally.<br>
+			The success of our students in the wider world itself speaks for them. Join us and be part of stream of success!
+
+		</div>
+	</div>
+
+	<div class="info" id="contact-page"><br><br>
+		<h1>Contact Us...</h1>
+		<div class="row">
+			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+				<div class="information">
+					<bold>Anand International College of Engineering</bold><br>
+					AnandInternational College of Engineering ,NearKanota, Agra Road, Jaipur<br> 
+					Phone: 01429- 234994, 95<br>
+					Mobile: 9928755552, 9928755553 Fax: 01429- 234994<br>
+					Email: info@anandice.ac.in<br><br>
+
+					If you have any queries regarding this software,you may contact the numbers below.<br>
+					a. Admin- 8949196927<br>
+					b. Proctor-9694097815<br>
+					c. Campus Manager-9694097813<br>
+					d. Hostel Manager-9694097801<br>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16568.274592791873!2d75.96131806715803!3d26.861588901074704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db8be74c25e59%3A0x675325c0c46956fc!2sAnand+International+College+of+Engineering!5e0!3m2!1sen!2sin!4v1536426536774" allowfullscreen></iframe>
+			</div>
+
+		</div>
+
+		<div id="totop" class="fa fa-arrow-up" title="Back To Top"></div>
+
+		<footer>
+			
+		</footer>
+
+	</body>
+
+	<script src="/javascripts/jquery.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/home.js"></script>
+	<script type="text/javascript" src="javascripts/validate.js"></script>
+
+	</html>

@@ -1,0 +1,153 @@
+			if ((name=="") || (email=="") || (cdate=="") || (id=="")  || (mobile=="") || (pwd=="") || (pwd!=pwd2) || (a<=75) || (!isNaN(mobile))) {
+					
+					if(name==""){
+					
+						$('#snameerr').text('Username Required!');
+					} 
+					else{
+							if (!isNaN(email)) {
+								$('#snameerr').text('Username Must Contain Alphabets!');
+							} 
+							else{
+								$('#nameerr').text('');
+							}
+						}
+				
+					if(email==""){
+						$('#semailerr').text('Email ID Required!');
+					}
+					else{
+						if ((email.indexOf('@')==0) || (!isNaN(email)) || (email.charAt(email.length-1)=='@') || (email.charAt(email.length-4)!='.') || (email.charAt(email.length-3)=='.')) {
+							$('#emailerr').text('Invalid Format!');
+						}else{
+							$('#emailerr').text('');
+						}
+					}
+					
+					if(cdate==""){
+						$('#scdateerr').text('Course Completion Date Required!');
+					}
+					else{
+						$('#scdateerr').text('');
+					}
+					if(id==""){
+						$('#siderr').text('College ID Required!');
+					}
+					else{
+						$('#siderr').text('');
+					}
+					if(mobile==""){
+						$('#smoberr').text('Mobile Number Required!');
+					}else{
+						if (isNaN(mobile)) {
+							$('#smoberr').text('Invalid Mobile Number!');
+						}
+						else{
+							$('#moberr').text('');
+						}
+					}
+					if(pwd==""){
+						$('#spwderr').text('Password Required!');
+					}
+					else{
+						if(a<=75){
+							$('#spwderr').text('Password Not Strong!');
+						}
+						else{
+							$('#spwderr').text('');
+						}
+					}
+					if(pwd!=pwd2){
+						$('#spwd2err').text('Passwords Don\'t Match!');
+					}
+					else{
+						$('#spwd2err').text('');
+					}
+					
+					return false;
+				
+			}
+			else{
+
+				$.ajax({
+				     type: 'post',
+				     datatype: "json",
+				     data: {
+				      
+				      name: name,
+				      email: email,
+				      dep: dep,
+				      gender: gender,
+				      batch: batch,
+				      id: id,
+				      cdate: cdate,
+				      Mobile: mobile,
+				      password: pwd,
+				      password2: pwd2,
+
+				     },
+				     url: '/Student/register', //node.js server is running
+
+				     error: function(error){
+				     	alert('error');
+				          if(error.responseText == 'already reg not verified'){
+				              console.log(error.responseText);
+				              document.getElementById("stderr").innerHTML= "Already Registered With Pending Verification";
+				              return false;
+				            }
+				            else if (error.responseText == 'already reg verified') {
+				              console.log(error.responseText);
+				              document.getElementById("stderr").innerHTML= "Already Registered! Please Login.";
+				            }
+				            else if (error.responseText == 'some') {
+				              console.log(error.responseText);
+				              document.getElementById("stderr").innerHTML= "Someone Already Logged In!";
+				            }
+				            else{
+				            	console.log('Unknown Error');
+				            	document.getElementById("stderr").innerHTML= "Unknown Error! Please Try Again.";
+				            }
+				          },
+				     success: function(data) {
+				     	alert('suck');
+				       if (data === 'success') { 
+				        console.log(data);
+				        document.getElementById("stderr").innerHTML= "Successfully Registered!";
+				        return false;
+				       }
+				     }
+				   });
+
+			}
+
+
+
+
+
+
+
+
+
+				var a=100;
+
+	$('#password').keyup(function(){
+			
+			var pwd=$('#password').val();
+			var pwdscore=0;
+
+			if (/[a-z]/.test(pwd)) { pwdscore += 25; }
+			if (/[A-Z]/.test(pwd)) { pwdscore += 25 ;}
+			if (/[\d]/.test(pwd)) { pwdscore += 25 ;}
+			if (pwd.length>=8) { pwdscore += 25 ;}
+			
+			if (pwdscore>0 && pwdscore<=50) {
+				$('.strength').text('weak');$('.strength').addClass('red');;$('.strength').removeClass('orange');$('.strength').removeClass('green');
+				}
+			if (pwdscore>50 && pwdscore<=75) {
+				$('.strength').text('good');$('.strength').removeClass('red');;$('.strength').addClass('orange');$('.strength').removeClass('green');
+				}
+			if (pwdscore>75 && pwdscore<=100) {
+				$('.strength').text('strong');$('.strength').removeClass('red');;$('.strength').removeClass('orange');$('.strength').addClass('green');
+				}
+			
+		});
